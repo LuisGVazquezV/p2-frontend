@@ -1,23 +1,36 @@
 import React from 'react';
-import { useTheme } from './ThemeProvider';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
+import { useTheme as useAppTheme } from './ThemeProvider';
+import { Switch, FormControlLabel, useTheme, Typography, Box } from '@mui/material';
 
 const ThemeSwitcher: React.FC = () => {
-  const { darkMode, toggleTheme } = useTheme();
+  const { darkMode, toggleTheme } = useAppTheme();
+  const theme = useTheme();
+  
+  // Define colors based on the theme
+  const switchColor = darkMode ? '#ffffff' : '#000000';
+  const labelColor = darkMode ? '#ffffff' : '#000000';
 
   return (
-    <div className="form-check form-switch">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        id="themeSwitcher"
-        checked={darkMode}
-        onChange={toggleTheme}
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <FormControlLabel
+        control={
+          <Switch
+            checked={darkMode}
+            onChange={toggleTheme}
+            sx={{
+              '& .MuiSwitch-thumb': {
+                backgroundColor: switchColor,
+              },
+              '& .MuiSwitch-track': {
+                backgroundColor: switchColor,
+              },
+            }}
+          />
+        }
+        label={<Typography style={{ color: labelColor }}>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</Typography>}
+        sx={{ marginLeft: 2 }}
       />
-      <label className="form-check-label" htmlFor="themeSwitcher">
-        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </label>
-    </div>
+    </Box>
   );
 };
 
