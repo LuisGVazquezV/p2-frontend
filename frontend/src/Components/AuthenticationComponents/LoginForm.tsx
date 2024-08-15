@@ -1,4 +1,3 @@
-export {}
 
 {/*Functionality: Handles user login (user or sponsor).
 o	Endpoints:
@@ -8,3 +7,7 @@ o	Functions:
 
 	login(username, password): Submits login credentials and retrieves user or sponsor details.
 */}
+
+export const LoginForm: React.FC = () => {
+    return <h1></h1>
+}

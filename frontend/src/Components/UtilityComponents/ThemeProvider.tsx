@@ -12,7 +12,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const toggleTheme = () => setDarkMode(prevMode => !prevMode);
 
-  return (
+  return (  
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
