@@ -4,6 +4,11 @@ import Navbar from './Components/UtilityComponents/Navbar';
 import Footer from './Components/UtilityComponents/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import { RegisterUserForm } from './Components/AuthenticationComponents/RegisterForm';
+import { AuthProvider } from './Components/AuthenticationComponents/AuthProvider';
+import { AuthSelector } from './Components/AuthenticationComponents/AuthSelector';
 
 const App: React.FC = () => {
   const { darkMode } = useTheme();
@@ -12,7 +17,10 @@ const App: React.FC = () => {
     <div className={`app-container ${darkMode ? 'dark-theme' : 'light-theme'}`}>
       <Navbar />
       <main className="content">
-        {/* Add Components as they are completed */}
+        <Routes>
+          <Route path="/" element={<AuthSelector/>}/>
+          <Route path="/register" element={<RegisterUserForm/>}/>
+        </Routes>
       </main>
       <Footer />
     </div>
@@ -20,9 +28,11 @@ const App: React.FC = () => {
 }
 
 const AppWrapper: React.FC = () => (
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+  <AuthProvider>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </AuthProvider>
 );
 
 export default AppWrapper;
