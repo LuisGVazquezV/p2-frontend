@@ -7,6 +7,7 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { RegisterUserForm } from './Components/AuthenticationComponents/RegisterForm';
+import { AuthProvider } from './Components/AuthenticationComponents/AuthProvider';
 
 const App: React.FC = () => {
   const { darkMode } = useTheme();
@@ -25,9 +26,11 @@ const App: React.FC = () => {
 }
 
 const AppWrapper: React.FC = () => (
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+  <AuthProvider>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </AuthProvider>
 );
 
 export default AppWrapper;

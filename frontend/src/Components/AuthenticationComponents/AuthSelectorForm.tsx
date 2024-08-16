@@ -1,3 +1,4 @@
+import { useTheme } from "@emotion/react"
 import { Container } from "@mui/material"
 
 
@@ -5,10 +6,10 @@ import { Container } from "@mui/material"
 	Endpoints:
 	Not associated with any endpoints
 	Functions:
-
 */}
 
-export const AuthTypeForm = () => {
+export const AuthSelector = () => {
+
     return <Container>
 		
 	</Container>

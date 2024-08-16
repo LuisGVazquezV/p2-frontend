@@ -18,7 +18,6 @@ o	Functions:
 
  export const RegisterUserForm: React.FC = () => {
     const navigate = useNavigate();
-    const theme = useTheme();
 
     return <Container>
         <h1>alright</h1>

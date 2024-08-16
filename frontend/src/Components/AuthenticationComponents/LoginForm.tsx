@@ -1,3 +1,4 @@
+import { useAuth } from "./AuthProvider"
 
 {/*Functionality: Handles user login (user or sponsor).
 o	Endpoints:
@@ -9,5 +10,5 @@ o	Functions:
 */}
 
 export const LoginForm: React.FC = () => {
-    return <h1></h1>
+    const {auth, setAuth} = useAuth()
 }
