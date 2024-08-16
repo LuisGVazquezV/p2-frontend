@@ -15,5 +15,5 @@ export const AuthSelector = () => {
 	const direction = breakBool ? "column" : "row"
 	
 
-    return <h1>afadsf</h1>
+    return <></>
 }
