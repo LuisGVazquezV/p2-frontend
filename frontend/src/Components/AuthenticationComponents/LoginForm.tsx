@@ -11,4 +11,6 @@ o	Functions:
 
 export const LoginForm: React.FC = () => {
     const {auth, setAuth} = useAuth()
+
+    return <h1>placeholder</h1>
 }

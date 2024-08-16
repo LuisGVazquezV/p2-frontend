@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { RegisterUserForm } from './Components/AuthenticationComponents/RegisterForm';
 import { AuthProvider } from './Components/AuthenticationComponents/AuthProvider';
+import { AuthSelector } from './Components/AuthenticationComponents/AuthSelector';
 
 const App: React.FC = () => {
   const { darkMode } = useTheme();
@@ -16,9 +17,10 @@ const App: React.FC = () => {
     <div className={`app-container ${darkMode ? 'dark-theme' : 'light-theme'}`}>
       <Navbar />
       <main className="content">
-      <Routes>
-        <Route path="/register" element={<RegisterUserForm/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<AuthSelector/>}/>
+          <Route path="/register" element={<RegisterUserForm/>}/>
+        </Routes>
       </main>
       <Footer />
     </div>
